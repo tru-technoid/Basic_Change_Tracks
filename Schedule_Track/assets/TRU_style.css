@@ -1,23 +1,53 @@
-body {
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f5f7fa;
-  color: #333;
-  transition: background 0.5s, color 0.5s;
+:root {
+  --bg-color: #f4f6f8;
+  --text-color: #333;
+  --header-bg: linear-gradient(to right, #2575fc, #6a11cb);
+  --section-highlight: #6a11cb;
+  --card-bg: #fff;
+  --hover-bg: #e8f0fe;
+  --footer-bg: #f1f1f1;
 }
 
-.dark-mode {
-  background: #121212;
-  color: #eee;
+body.dark {
+  --bg-color: #1e1e1e;
+  --text-color: #ddd;
+  --header-bg: linear-gradient(to right, #141e30, #243b55);
+  --section-highlight: #bb86fc;
+  --card-bg: #2c2c2c;
+  --hover-bg: #333;
+  --footer-bg: #121212;
+}
+
+* {
+  transition: all 0.3s ease;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--bg-color);
+  color: var(--text-color);
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 header {
-  background: linear-gradient(to right, #00c6ff, #0072ff);
+  background: var(--header-bg);
   color: white;
   text-align: center;
   padding: 30px 20px;
-  animation: fadeInDown 1s ease-in-out;
+  position: relative;
 }
 
 header h1 {
@@ -26,88 +56,99 @@ header h1 {
 }
 
 header p {
+  font-size: 1.2em;
   margin-top: 10px;
-  font-size: 1.1em;
+  opacity: 0.9;
 }
 
-button {
-  background: #0072ff;
-  color: white;
+.toggle-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
   padding: 10px 15px;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
+  background: #fff;
+  color: #000;
+  font-weight: bold;
   cursor: pointer;
-  margin-top: 10px;
-  transition: background 0.3s;
-}
-
-button:hover {
-  background: #0056cc;
 }
 
 .container {
-  max-width: 960px;
+  max-width: 900px;
   margin: 30px auto;
   padding: 20px;
 }
 
-.section h2 {
-  color: #0072ff;
-  border-left: 5px solid #0072ff;
-  padding-left: 10px;
-  font-size: 1.8em;
-  margin-bottom: 20px;
-  animation: fadeInLeft 1s ease-in-out;
+.section {
+  margin-bottom: 40px;
 }
 
-#scheduleTable {
+.section h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  border-left: 8px solid var(--section-highlight);
+  padding-left: 12px;
+  color: var(--section-highlight);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: var(--card-bg);
+  border-radius: 8px;
+  margin: 10px 0;
+  padding: 15px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  font-size: 1.1em;
+  transition: all 0.3s ease;
+}
+
+li:hover {
+  transform: translateX(5px);
+  background: var(--hover-bg);
+}
+
+table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 30px;
-  animation: fadeInUp 1s ease-in-out;
+  margin-bottom: 40px;
 }
 
-#scheduleTable th,
-#scheduleTable td {
-  border: 1px solid #ccc;
+table,
+th,
+td {
+  border: 1px solid #bbb;
+}
+
+th,
+td {
   padding: 10px;
   text-align: center;
 }
 
-#scheduleTable th {
-  background-color: #0072ff;
+th {
+  background-color: var(--section-highlight);
   color: white;
 }
 
-#scheduleTable input[type="text"] {
-  width: 90%;
-  padding: 5px;
-}
-
 footer {
-  background: #f1f1f1;
   text-align: center;
-  padding: 15px;
+  padding: 20px;
+  background: var(--footer-bg);
   font-style: italic;
-  color: #444;
+  color: var(--text-color);
 }
 
-.dark-mode footer {
-  background: #222;
-  color: #aaa;
-}
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2em;
+  }
 
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInLeft {
-  from { opacity: 0; transform: translateX(-20px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  .section h2 {
+    font-size: 1.5em;
+  }
 }
