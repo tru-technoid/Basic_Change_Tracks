@@ -6,12 +6,32 @@
     <title>Schedule Track</title>
     <link rel="stylesheet" href="assets/TRU_Style.css" />
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script type="module">
+      import {
+        createIcons,
+        Sun,
+        Moon,
+      } from "https://unpkg.com/lucide@latest?module";
+      createIcons({ icons: { Sun, Moon } });
+    </script>
   </head>
   <body>
     <header>
       <h1>⏰ My Energetic Daily Schedule Tracker</h1>
       <p>Balance • Productivity • Joy</p>
-      <button id="themeToggle"><i data-lucide="sun"></i></button>
+      <button
+        id="themeToggle"
+        style="
+          position: fixed;
+          top: 10px;
+          right: 10px;
+          background: none;
+          border: none;
+          cursor: pointer;
+        "
+      >
+        <i data-lucide="sun"></i>
+      </button>
     </header>
 
     <main class="container">
@@ -338,6 +358,35 @@
         });
 
       lucide.createIcons();
+    </script>
+    <script type="module">
+      import {
+        createIcons,
+        Sun,
+        Moon,
+      } from "https://unpkg.com/lucide@latest?module";
+
+      const body = document.body;
+      const button = document.getElementById("themeToggle");
+      let currentIcon = "sun";
+
+      // Set default theme
+      body.classList.add("light-mode");
+
+      function updateIcon(iconName) {
+        button.innerHTML = `<i data-lucide="${iconName}"></i>`;
+        createIcons({ icons: { Sun, Moon } });
+      }
+
+      updateIcon(currentIcon);
+
+      button.addEventListener("click", () => {
+        const isLight = body.classList.contains("light-mode");
+        body.classList.toggle("light-mode", !isLight);
+        body.classList.toggle("dark-mode", isLight);
+        currentIcon = isLight ? "moon" : "sun";
+        updateIcon(currentIcon);
+      });
     </script>
   </body>
 </html>
