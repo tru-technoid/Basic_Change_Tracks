@@ -1,160 +1,343 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Schedule Track</title>
-  <link rel="stylesheet" href="assets/TRU_Style.css" />
-  <script src="https://unpkg.com/lucide@latest"></script>
-</head>
-<body>
-  <header>
-    <h1>⏰ My Energetic Daily Schedule Tracker</h1>
-    <p>Balance • Productivity • Joy</p>
-    <button id="themeToggle"><i data-lucide="sun"></i></button>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schedule Track</title>
+    <link rel="stylesheet" href="assets/TRU_Style.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <header>
+      <h1>⏰ My Energetic Daily Schedule Tracker</h1>
+      <p>Balance • Productivity • Joy</p>
+      <button id="themeToggle"><i data-lucide="sun"></i></button>
+    </header>
 
-  <main class="container">
-    <!-- Timing Table -->
-    <section class="section" id="timing-table">
-      <h2>[0] ⏰ Daily Schedule Timing Table <h3 id="currentDate"></h3></h2>
-      <form id="scheduleForm">
-        <table id="scheduleTable">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Time</th>
-              <th>Activity</th>
-              <th>Duration</th>
-              <th>Done</th>
-              <th>Remarks</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>1</td><td>06:00 - 07:00</td><td>Morning Walks</td><td>60 min</td><td><input type="checkbox" /></td><td><input type="text" /></td></tr>
-            <tr><td>2</td><td>07:30 - 08:00</td><td>Fresh</td><td>30 min</td><td><input type="checkbox" /></td><td><input type="text" /></td></tr>
-            <tr><td>3</td><td>08:00 - 08:40</td><td>English Grammar</td><td>40 min</td><td><input type="checkbox" /></td><td><input type="text" /></td></tr>
-            <tr><td>4</td><td>08:40 - 09:00</td><td>Reading Newspaper</td><td>20 min</td><td><input type="checkbox" /></td><td><input type="text" /></td></tr>
-            <tr><td>5</td><td>09:00 - 09:30</td><td>Watering Plants</td><td>30 min</td><td><input type="checkbox" /></td><td><input type="text" /></td></tr>
-            <tr><td>6</td><td>09:30 - 10:00</td><td>Reading Books</td><td>30 min</td><td><input type="checkbox" /></td><td><input type="text" /></td></tr>
-            <tr><td>7</td><td>10:00 - 10:30</td><td>Instagram Progress</td><td>30 min</td><td><input type="checkbox" /></td><td><input type="text" /></td></tr>
-            <tr><td>8</td><td>10:30 - 11:00</td><td>Earning Money</td><td>30 min</td><td><input type="checkbox" /></td><td><input type="text" /></td></tr>
-            <tr><td>9</td><td>11:00 - 11:30</td><td>Building Growth Search</td><td>30 min</td><td><input type="checkbox" /></td><td><input type="text" /></td></tr>
-            <tr><td>10</td><td>11:30 - 13:00</td><td>Coding Learn</td><td>90 min</td><td><input type="checkbox" /></td><td><input type="text" /></td></tr>
-            <tr><td>11</td><td>13:00 - 14:00</td><td>Lunch</td><td>60 min</td><td><input type="checkbox" /></td><td><input type="text" /></td></tr>
-            <tr><td>12</td><td>14:00 - 16:00</td><td>Coding Practice</td><td>120 min</td><td><input type="checkbox" /></td><td><input type="text" /></td></tr>
-            <tr><td>13</td><td>16:00 - 16:30</td><td>Relax</td><td>30 min</td><td><input type="checkbox" /></td><td><input type="text" /></td></tr>
-            <tr><td>14</td><td>16:30 - 17:30</td><td>Arts Drawing</td><td>60 min</td><td><input type="checkbox" /></td><td><input type="text" /></td></tr>
-            <tr><td>15</td><td>17:30 - 18:30</td><td>Watching Series</td><td>60 min</td><td><input type="checkbox" /></td><td><input type="text" /></td></tr>
-            <tr><td>16</td><td>18:30 - 19:00</td><td>Meditation-Devotion</td><td>30 min</td><td><input type="checkbox" /></td><td><input type="text" /></td></tr>
-            <tr><td>17</td><td>19:00 - 20:00</td><td>Social Networks News</td><td>60 min</td><td><input type="checkbox" /></td><td><input type="text" /></td></tr>
-            <tr><td>18</td><td>20:00 - 20:30</td><td>Avakin Life</td><td>30 min</td><td><input type="checkbox" /></td><td><input type="text" /></td></tr>
-            <tr><td>19</td><td>20:30 - 21:30</td><td>Dinner</td><td>60 min</td><td><input type="checkbox" /></td><td><input type="text" /></td></tr>
-            <tr><td>20</td><td>21:30 - 22:00</td><td>LinkedIn-Facebook</td><td>30 min</td><td><input type="checkbox" /></td><td><input type="text" /></td></tr>
-            <tr><td>21</td><td>22:00 - 22:30</td><td>YouTube Motivation</td><td>30 min</td><td><input type="checkbox" /></td><td><input type="text" /></td></tr>
-            <tr><td>22</td><td>22:30 - 23:00</td><td>Revision</td><td>30 min</td><td><input type="checkbox" /></td><td><input type="text" /></td></tr>
-            <tr><td>23</td><td>23:00 - 23:20</td><td>Self Talks</td><td>20 min</td><td><input type="checkbox" /></td><td><input type="text" /></td></tr>
-            <tr><td>24</td><td>00:10 - 06:00</td><td>Sleep</td><td>410 min</td><td><input type="checkbox" /></td><td><input type="text" /></td></tr>
-          </tbody>
-        </table>
-        <button type="submit">Download CSV</button>
-      </form>
-    </section>
+    <main class="container">
+      <!-- Timing Table -->
+      <section class="section" id="timing-table">
+        <h2>
+          [0] ⏰ Daily Schedule Timing Table
+          <h3 id="currentDate"></h3>
+        </h2>
+        <form id="scheduleForm">
+          <table id="scheduleTable">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Time</th>
+                <th>Activity</th>
+                <th>Duration</th>
+                <th>Done</th>
+                <th>Remarks</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>06:00 - 07:00</td>
+                <td>Morning Walks</td>
+                <td>60 min</td>
+                <td><input type="checkbox" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>07:30 - 08:00</td>
+                <td>Fresh</td>
+                <td>30 min</td>
+                <td><input type="checkbox" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>08:00 - 08:40</td>
+                <td>English Grammar</td>
+                <td>40 min</td>
+                <td><input type="checkbox" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>08:40 - 09:00</td>
+                <td>Reading Newspaper</td>
+                <td>20 min</td>
+                <td><input type="checkbox" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>09:00 - 09:30</td>
+                <td>Watering Plants</td>
+                <td>30 min</td>
+                <td><input type="checkbox" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>09:30 - 10:00</td>
+                <td>Reading Books</td>
+                <td>30 min</td>
+                <td><input type="checkbox" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>10:00 - 10:30</td>
+                <td>Instagram Progress</td>
+                <td>30 min</td>
+                <td><input type="checkbox" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>10:30 - 11:00</td>
+                <td>Earning Money</td>
+                <td>30 min</td>
+                <td><input type="checkbox" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>11:00 - 11:30</td>
+                <td>Building Growth Search</td>
+                <td>30 min</td>
+                <td><input type="checkbox" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>11:30 - 13:00</td>
+                <td>Coding Learn</td>
+                <td>90 min</td>
+                <td><input type="checkbox" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>11</td>
+                <td>13:00 - 14:00</td>
+                <td>Lunch</td>
+                <td>60 min</td>
+                <td><input type="checkbox" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td>14:00 - 16:00</td>
+                <td>Coding Practice</td>
+                <td>120 min</td>
+                <td><input type="checkbox" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>13</td>
+                <td>16:00 - 16:30</td>
+                <td>Relax</td>
+                <td>30 min</td>
+                <td><input type="checkbox" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>14</td>
+                <td>16:30 - 17:30</td>
+                <td>Arts Drawing</td>
+                <td>60 min</td>
+                <td><input type="checkbox" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>15</td>
+                <td>17:30 - 18:30</td>
+                <td>Watching Series</td>
+                <td>60 min</td>
+                <td><input type="checkbox" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>16</td>
+                <td>18:30 - 19:00</td>
+                <td>Meditation-Devotion</td>
+                <td>30 min</td>
+                <td><input type="checkbox" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>17</td>
+                <td>19:00 - 20:00</td>
+                <td>Social Networks News</td>
+                <td>60 min</td>
+                <td><input type="checkbox" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>18</td>
+                <td>20:00 - 20:30</td>
+                <td>Revision</td>
+                <td>30 min</td>
+                <td><input type="checkbox" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>19</td>
+                <td>20:30 - 21:30</td>
+                <td>Dinner</td>
+                <td>60 min</td>
+                <td><input type="checkbox" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>20</td>
+                <td>21:30 - 22:00</td>
+                <td>LinkedIn-Facebook</td>
+                <td>30 min</td>
+                <td><input type="checkbox" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>21</td>
+                <td>22:00 - 22:30</td>
+                <td>YouTube Motivation</td>
+                <td>30 min</td>
+                <td><input type="checkbox" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>22</td>
+                <td>22:30 - 23:00</td>
+                <td>Ava Life</td>
+                <td>30 min</td>
+                <td><input type="checkbox" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>23</td>
+                <td>23:00 - 23:20</td>
+                <td>Self Talks</td>
+                <td>20 min</td>
+                <td><input type="checkbox" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>24</td>
+                <td>00:10 - 06:00</td>
+                <td>Sleep</td>
+                <td>410 min</td>
+                <td><input type="checkbox" /></td>
+                <td><input type="text" /></td>
+              </tr>
+            </tbody>
+          </table>
+          <button type="submit">Download CSV</button>
+        </form>
+      </section>
 
-    <!-- Grouped Sections -->
-    <div class="section" id="morning">
-      <h2>[1] 🌅 Morning Routine</h2>
-      <ul>
-        <li>30 min - Fresh (Row 2)</li>
-        <li>40 min - English Grammar (Row 3)</li>
-        <li>20 min - Reading Newspaper (Row 4)</li>
-        <li>30 min - Watering Plants (Row 5)</li>
-        <li>30 min - Reading Books (Row 6)</li>
-        <li>60 min - Morning Walks (Row 1)</li>
-      </ul>
-    </div>
+      <!-- Grouped Sections -->
+      <div class="section" id="morning">
+        <h2>[1] 🌅 Morning Routine</h2>
+        <ul>
+          <li>30 min - Fresh (Row 2)</li>
+          <li>40 min - English Grammar (Row 3)</li>
+          <li>20 min - Reading Newspaper (Row 4)</li>
+          <li>30 min - Watering Plants (Row 5)</li>
+          <li>30 min - Reading Books (Row 6)</li>
+          <li>60 min - Morning Walks (Row 1)</li>
+        </ul>
+      </div>
 
-    <div class="section" id="productivity">
-      <h2>[2] 💼 Productivity Block</h2>
-      <ul>
-        <li>30 min - Earning Money (Row 8)</li>
-        <li>30 min - Building Growth Search (Row 9)</li>
-        <li>30 min - Instagram Progress (Row 7)</li>
-        <li>30 min - LinkedIn-Facebook (Row 20)</li>
-      </ul>
-    </div>
+      <div class="section" id="productivity">
+        <h2>[2] 💼 Productivity Block</h2>
+        <ul>
+          <li>30 min - Earning Money (Row 8)</li>
+          <li>30 min - Building Growth Search (Row 9)</li>
+          <li>30 min - Instagram Progress (Row 7)</li>
+          <li>30 min - LinkedIn-Facebook (Row 20)</li>
+        </ul>
+      </div>
 
-    <div class="section" id="learning">
-      <h2>[3] 🧠 Learning & Skill-Up</h2>
-      <ul>
-        <li>90 min - Coding Learn (Row 10)</li>
-        <li>120 min - Coding Practice (Row 12)</li>
-        <li>30 min - Revision (Row 22)</li>
-        <li>30 min - YouTube Motivation (Row 21)</li>
-      </ul>
-    </div>
+      <div class="section" id="learning">
+        <h2>[3] 🧠 Learning & Skill-Up</h2>
+        <ul>
+          <li>90 min - Coding Learn (Row 10)</li>
+          <li>120 min - Coding Practice (Row 12)</li>
+          <li>30 min - Revision (Row 18)</li>
+          <li>30 min - YouTube Motivation (Row 21)</li>
+        </ul>
+      </div>
 
-    <div class="section" id="leisure">
-      <h2>[4] 🎨 Leisure & Refresh</h2>
-      <ul>
-        <li>60 min - Arts Drawing (Row 14)</li>
-        <li>60 min - Watching Series (Row 15)</li>
-        <li>30 min - Relax (Row 13)</li>
-        <li>30 min - Meditation-Devotion (Row 16)</li>
-        <li>60 min - Social Networks News (Row 17)</li>
-        <li>30 min - Avakin Life (Row 18)</li>
-        <li>20 min - Self Talks (Row 23)</li>
-      </ul>
-    </div>
+      <div class="section" id="leisure">
+        <h2>[4] 🎨 Leisure & Refresh</h2>
+        <ul>
+          <li>60 min - Arts Drawing (Row 14)</li>
+          <li>60 min - Watching Series (Row 15)</li>
+          <li>30 min - Relax (Row 13)</li>
+          <li>30 min - Meditation-Devotion (Row 16)</li>
+          <li>60 min - Social Networks News (Row 17)</li>
+          <li>30 min - Ava Life (Row 22)</li>
+          <li>20 min - Self Talks (Row 23)</li>
+        </ul>
+      </div>
 
-    <div class="section" id="meals">
-      <h2>[5] 🍽️ Meals & Rest</h2>
-      <ul>
-        <li>60 min - Lunch (Row 11)</li>
-        <li>60 min - Dinner (Row 19)</li>
-        <li>410 min - Sleep (Row 24)</li>
-      </ul>
-    </div>
-  </main>
+      <div class="section" id="meals">
+        <h2>[5] 🍽️ Meals & Rest</h2>
+        <ul>
+          <li>60 min - Lunch (Row 11)</li>
+          <li>60 min - Dinner (Row 19)</li>
+          <li>410 min - Sleep (Row 24)</li>
+        </ul>
+      </div>
+    </main>
 
-  <footer>
-    <p>Created to energize your daily routine. © 2025 tru-tehnoid</p>
-  </footer>
+    <footer>
+      <p>Created to energize your daily routine. © 2025 tru-tehnoid</p>
+    </footer>
 
-  <script>
-    document.getElementById('currentDate').innerText = new Date().toLocaleDateString();
+    <script>
+      document.getElementById("currentDate").innerText =
+        new Date().toLocaleDateString();
 
-    const themeToggle = document.getElementById('themeToggle');
-    const icon = themeToggle.querySelector('i');
+      const themeToggle = document.getElementById("themeToggle");
+      const icon = themeToggle.querySelector("i");
 
-    themeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      const isDark = document.body.classList.contains('dark-mode');
-      icon.setAttribute('data-lucide', isDark ? 'moon' : 'sun');
-      lucide.createIcons();
-    });
-
-    document.getElementById('scheduleForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      const rows = document.querySelectorAll('#scheduleTable tbody tr');
-      let csvContent = 'No,Time,Activity,Duration,Done,Remarks\n';
-
-      rows.forEach((row) => {
-        const cols = row.querySelectorAll('td');
-        const done = cols[4].querySelector('input[type="checkbox"]').checked ? 'Yes' : 'No';
-        const remark = cols[5].querySelector('input').value;
-        const data = [cols[0].innerText, cols[1].innerText, cols[2].innerText, cols[3].innerText, done, remark];
-        csvContent += data.join(',') + '\n';
+      themeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        const isDark = document.body.classList.contains("dark-mode");
+        icon.setAttribute("data-lucide", isDark ? "moon" : "sun");
+        lucide.createIcons();
       });
 
-      const blob = new Blob([csvContent], { type: 'text/csv' });
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = 'Schedule_Track.csv';
-      a.click();
-    });
+      document
+        .getElementById("scheduleForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const rows = document.querySelectorAll("#scheduleTable tbody tr");
+          let csvContent = "No,Time,Activity,Duration,Done,Remarks\n";
 
-    lucide.createIcons();
-  </script>
-</body>
+          rows.forEach((row) => {
+            const cols = row.querySelectorAll("td");
+            const done = cols[4].querySelector('input[type="checkbox"]').checked
+              ? "Yes"
+              : "No";
+            const remark = cols[5].querySelector("input").value;
+            const data = [
+              cols[0].innerText,
+              cols[1].innerText,
+              cols[2].innerText,
+              cols[3].innerText,
+              done,
+              remark,
+            ];
+            csvContent += data.join(",") + "\n";
+          });
+
+          const blob = new Blob([csvContent], { type: "text/csv" });
+          const a = document.createElement("a");
+          a.href = URL.createObjectURL(blob);
+          a.download = "Schedule_Track.csv";
+          a.click();
+        });
+
+      lucide.createIcons();
+    </script>
+  </body>
 </html>
