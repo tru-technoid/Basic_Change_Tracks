@@ -1,0 +1,30 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.local
+
+# Node and Python (optional future expansions)
+node_modules/
+__pycache__/
+
+# VSCode settings
+.vscode/
+
+# Build and temporary output
+dist/
+build/
+tmp/
+temp/
+.cache/
+*.csv
+
+# System generated
+*.bak
+*.swp
+*.tmp

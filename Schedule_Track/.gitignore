@@ -1,0 +1,31 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# IDE/editor configs
+.vscode/
+.idea/
+
+# Environment files (if JS tooling is used in future)
+.env
+.env.*
+
+# Node (if added for future automation)
+node_modules/
+
+# Output/Generated files
+dist/
+build/
+*.csv
+
+# Cache or temp
+.cache/
+*.tmp
+*.bak
+*.swp
+
+# Coverage & test
+coverage/
