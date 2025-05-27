@@ -1,0 +1,113 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f7fa;
+  color: #333;
+  transition: background 0.5s, color 0.5s;
+}
+
+.dark-mode {
+  background: #121212;
+  color: #eee;
+}
+
+header {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+header p {
+  margin-top: 10px;
+  font-size: 1.1em;
+}
+
+button {
+  background: #0072ff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #0056cc;
+}
+
+.container {
+  max-width: 960px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.section h2 {
+  color: #0072ff;
+  border-left: 5px solid #0072ff;
+  padding-left: 10px;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  animation: fadeInLeft 1s ease-in-out;
+}
+
+#scheduleTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+#scheduleTable th,
+#scheduleTable td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+#scheduleTable th {
+  background-color: #0072ff;
+  color: white;
+}
+
+#scheduleTable input[type="text"] {
+  width: 90%;
+  padding: 5px;
+}
+
+footer {
+  background: #f1f1f1;
+  text-align: center;
+  padding: 15px;
+  font-style: italic;
+  color: #444;
+}
+
+.dark-mode footer {
+  background: #222;
+  color: #aaa;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
